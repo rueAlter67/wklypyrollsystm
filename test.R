@@ -1,3 +1,5 @@
-sample <- "hello"
+employee <- setClass("employee", slots = list(workedDays = "numOfDays", workedHours = "numOfHours", toBePaid = "salary")) #employee class/object
 
-sample
+computeSalary <- function(){
+  #function for computing salary
+  }
