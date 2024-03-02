@@ -2,3 +2,11 @@
 title: "Pay Roll System"
 output: html_notebook
 -----
+employee <- ("employee.r")
+
+----
+computeSalary <- function(){
+  #function for computing salary
+  }
+employeeSalary = new ("employee", numOfDays, workOfDays
+computeSalary()
