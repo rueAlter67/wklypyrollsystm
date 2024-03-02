@@ -2,7 +2,7 @@
 title: "Pay Roll System"
 output: html_notebook
 -----
-employee <- ("employee.r")
+source("employee.R", local = knitr :: knit_global())
 
 ----
 computeSalary <- function(){
