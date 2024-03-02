@@ -3,7 +3,7 @@ title: "Pay Roll System"
 output: html_notebook
 -----
 source("employee.R", local = knitr :: knit_global())
-
+```{r message = FALSE}
 ----
 computeSalary <- function(){
   #function for computing salary
