@@ -8,5 +8,5 @@ source("employee.R", local = knitr :: knit_global())
 computeSalary <- function(){
   #function for computing salary
   }
-employeeSalary = new ("employee", numOfDays, workOfDays
+employeeSalary = new ("employee", timeIn, timeOut, overTime, dayOrNight)
 computeSalary()
