@@ -1,4 +1,4 @@
-employee <- setClass("employee", slots = list(workedDays = "numOfDays", workedHours = "numOfHours", toBePaid = "salary")) #employee class/object
+employee <- setClass("employee", slots = list(timeIn = "clockIn", timeOut = "clockOut", dayType = "typeOfDay", overTime = "numOfOver", nightShift = "dayOrNight")) #employee class/object
 
 
 
