@@ -6,6 +6,7 @@ source("employee.R", local = knitr :: knit_global())
 source("functions.R", local = knitr :: knit_global())
 ```{r message = FALSE}
 ----
+dailySalary <- 500
 computeSalary <- function(){
   #function for computing salary
   if (attr(employeeSalary, which = "nightShift") == true){
