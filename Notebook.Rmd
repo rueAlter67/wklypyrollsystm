@@ -3,16 +3,22 @@ title: "Pay Roll System"
 output: html_notebook
 -----
 source("employee.R", local = knitr :: knit_global())
+source("functions.R", local = knitr :: knit_global())
 ```{r message = FALSE}
 ----
+dailySalary <- 500
 computeSalary <- function(){
   #function for computing salary
-  if (attr(employeeSalary, which = "nightShift") == true){
-    
+  if (attr(employeeSalary, which = "nightShift") == true){ #if night shift
+    if(attr(employeeSalary, which = "dayType") == "Regular"){
+      
+    }
 }
-else{
-
-}
+  else{
+    if(attr(employeeSalary, which = "dayType") == "Regular"){
+      
+    }
   }
+}
 employeeSalary = new ("employee", clockIn, clockOut, typeOfDay, numOfOver, dayOrNight)
 computeSalary()
