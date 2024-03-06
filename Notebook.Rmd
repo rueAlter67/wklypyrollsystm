@@ -9,7 +9,7 @@ source("functions.R", local = knitr :: knit_global())
 dailySalary <- 500
 computeSalary <- function(){
   #function for computing salary
-  if (attr(employeeSalary, which = "nightShift") == true){
+  if (attr(employeeSalary, which = "nightShift") == true){ #if night shift
     
 }
 else{
