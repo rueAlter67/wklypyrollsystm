@@ -1,0 +1,19 @@
+month,day,day_type
+1,1,Regular Holiday
+3,23,Regular Holiday
+3,29,Regular Holiday
+4,9,Regular Holiday
+5,1,Regular Holiday
+6,12,Regular Holiday
+8,26,Regular Holiday
+11,30,Regular Holiday
+12,25,Regular Holiday
+12,39,Regular Holiday
+8,21,Special Nonworking
+11,1,Special Nonworking
+12,8,Special Nonworking
+12,31,Special Nonworking
+2,10,Special Nonworking
+3,30,Special Nonworking
+11,2,Special Nonworking
+12,24,Special Nonworking
