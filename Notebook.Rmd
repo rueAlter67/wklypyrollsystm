@@ -1,0 +1,22 @@
+------
+title: "Pay Roll System"
+output: html_notebook
+-----
+source("employee.R", local = knitr :: knit_global())
+source("functions.R", local = knitr :: knit_global())
+```{r message = FALSE}
+----
+dailySalary <- 500
+listOfEmployees <- list()
+computeSalary <- function(){
+  #function for computing salary
+  
+}
+main <- function(){
+  employeeSalary <- employee$new(name,timeIn, timeOut, dayType, overTime, nightShift) #object (class in R) for employee salary
+  append(listOfEmployees, employeeSalary)
+  computeSalary() #calls computeSalary function
+}
+
+main()
+
