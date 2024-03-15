@@ -1,5 +1,5 @@
 employee <- setClass("employee", slots = list(workedDays = "numeric", workedHours = "numeric", toBePaid = "numeric")) #employee class/object
-
+source("functions.R") #import functions
 
 running = TRUE
 while(running){
