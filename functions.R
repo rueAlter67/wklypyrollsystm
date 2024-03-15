@@ -2,6 +2,7 @@
   library(dplyr)
   library(stringr)
   library(tidyverse)
+  library(lubridate)
   
   string_num<- function(input){
     #checks if input has letters
