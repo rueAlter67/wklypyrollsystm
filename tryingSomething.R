@@ -32,6 +32,9 @@ salaryCompute <- function(timeIn, timeOut, dayOfWeek, workDayType){
               return dailySalary
             }
         }
+      else if (workDayType == "Special){
+
+      }
     }
     
   }
@@ -47,7 +50,7 @@ salaryCompute <- function(timeIn, timeOut, dayOfWeek, workDayType){
       timeOut <- readLine("Time Out (input in military time [ie. 1000 for 10am, 2300, for 11pm, 1430 for 2:30pm]): ")
       dayOfWeek <- readLine("Day: ")
       if(dayOfWeek == "Saturday" || dayOfWeek == "Sunday"){
-        workDayType <- "Rest Day"
+        workDayType <- "Rest"
         }
       else{
         workDayType <- readLine("Type of Day: ")
