@@ -5,11 +5,20 @@ library(lubridate)
   
 special_dates <- read_csv('dates.csv')
 
+militaryToCivilianTimeHour <- function(time){
+    hour <- time/100
+    if (hour >= 13 && hour <25){
+      hour <- hour - 12
+    }
+  return hour
+}
+
+  
 computeOverTime <- function(timeIn, timeOut){
-    if (timeIn < timeOut){
+    if (timeIn < timeOut){ #nightshift
         
     }
-    else{
+    else{ #dayshift
       if (timeOut > 2100){
           return (timeOut - 2100)
       }
