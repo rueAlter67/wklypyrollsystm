@@ -7,9 +7,13 @@ special_dates <- read_csv('dates.csv')
 
 computeOverTime <- function(timeIn, timeOut){
     if (timeIn < timeOut){
-        timeAfterMidnight <- (2400 - timeIn)
         
+    }
+    else{
+      if (timeOut > 2100){
+          return (timeOut - 2100)
       }
+    }
   }
 salaryCompute <- function(timeIn, timeOut, dayOfWeek, workDayType){
     dailySalary <- 500
