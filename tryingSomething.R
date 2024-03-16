@@ -12,7 +12,15 @@ computeOverTime <- function(timeIn, timeOut){
       }
   }
 salaryCompute <- function(timeIn, timeOut, dayOfWeek, workDayType){
+    dailySalary <- 500
     overTime <- computeOverTime(timeIn, timeOut)
+    if (timeIn > 2100){
+        #nightshift
+        
+    }
+    else{
+        # dayshift
+    }
     
   }
   running = TRUE
