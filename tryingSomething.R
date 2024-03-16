@@ -5,6 +5,13 @@ library(lubridate)
   
 special_dates <- read_csv('dates.csv')
 
+computeOverTime <- function(timeIn, timeOut){
+    return over <- timeOut - timeIn
+  }
+salaryCompute <- function(timeIn, timeOut, dayOfWeek, workDayType){
+    overTime <- computeOverTime(timeIn, timeOut)
+    
+  }
   running = TRUE
   while(running){
     print("Weekly Payroll System")
@@ -22,6 +29,7 @@ special_dates <- read_csv('dates.csv')
       else{
         workDayType <- readLine("Type of Day: ")
         }
+      salaryCompute(timeIn, timeOut, dayOfWeek, workDayType)
     }else{
       running <- FALSE
     }
