@@ -6,7 +6,10 @@ library(lubridate)
 special_dates <- read_csv('dates.csv')
 
 computeOverTime <- function(timeIn, timeOut){
-    return over <- timeOut - timeIn
+    if (timeIn < timeOut){
+        timeAfterMidnight <- (2400 - timeIn)
+        
+      }
   }
 salaryCompute <- function(timeIn, timeOut, dayOfWeek, workDayType){
     overTime <- computeOverTime(timeIn, timeOut)
@@ -20,8 +23,8 @@ salaryCompute <- function(timeIn, timeOut, dayOfWeek, workDayType){
     
     choice <- readline("Enter choice: ")
     if(choice==1 ){
-      timeIn <- readLine("Time In: ")
-      timeOut <- readLine("Time Out: ")
+      timeIn <- readLine("Time In (input in military time [ie. 1000 for 10am, 2300, for 11pm, 1430 for 2:30pm]): ")
+      timeOut <- readLine("Time Out (input in military time [ie. 1000 for 10am, 2300, for 11pm, 1430 for 2:30pm]): ")
       dayOfWeek <- readLine("Day: ")
       if(dayOfWeek == "Saturday" || dayOfWeek == "Sunday"){
         workDayType <- "Rest Day"
