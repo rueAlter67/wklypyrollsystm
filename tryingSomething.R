@@ -1,3 +1,5 @@
+9
+
 library(dplyr)
 library(stringr)
 library(tidyverse)
@@ -107,10 +109,12 @@ salaryCompute <- function(timeIn, timeOut, dayOfWeek, workDayType){
 #time in military to civilian format
       timeInHour <- militaryToCivilianTimeHour(timeIn)
       timeInMin <- militaryToCivilianTimeMinutes(timeIn)
+print("Time In:    " + timeInHour +" : " + timeInMin\n)
 
 #time out military to civilian format
       timeOutHour <- militaryToCivilianTimeHOur(timeOut)
       timeOutMin <- militaryToCivilianTimeMinutes(timeOut)
+print("Time Out:   " + timeOutHour +" : " + timeOutMin\n)
 
     }else{ #stops application
       running <- FALSE
