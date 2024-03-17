@@ -5,6 +5,12 @@ library(lubridate)
   
 special_dates <- read_csv('dates.csv')
 
+militaryToCivilianTimeMinutes <- function(time){
+    hour <- time/100
+    minute <- time - hour
+    return minute
+}
+
 militaryToCivilianTimeHour <- function(time){
     hour <- time/100
     if (hour >= 13 && hour <25){
