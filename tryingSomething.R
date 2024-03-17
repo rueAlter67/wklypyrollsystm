@@ -41,9 +41,17 @@ computeOverTime <- function(timeOut, shift){
     if (shift == "Day Shift"){
         if (timeOut < 2100){
            timeBeforeMid <- 2400 - 2100
-           over 
+           over <- (timeBeforeMid + timeOut)/100
+        }
+        else{
+           over <- timeOut - 2100
         }
     }
+    else{
+        #nightshift overtime
+    }
+
+    return over
 }
 
 #computes for the salary depending on inputs
