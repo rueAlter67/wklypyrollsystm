@@ -1,4 +1,3 @@
-29
 
 library(dplyr)
 library(stringr)
@@ -8,6 +7,16 @@ library(lubridate)
 special_dates <- read_csv('dates.csv')
 
 dailySalary <- 500
+
+#checks shift
+shift <- function(time){
+    if (time > 2100){
+       return "Night Shift"
+    }
+    else{
+       return "Day Shift"
+    }
+}
 
 #converts time to civilian format and gives back minutes
 militaryToCivilianTimeMinutes <- function(time)
@@ -40,45 +49,20 @@ computeOverTime <- function(timeIn, timeOut){
   }
 
 #computes for the salary depending on inputs
-salaryCompute <- function(timeIn, timeOut, dayOfWeek, workDayType){
-    totalSalary <- dailySalary
-    overTime <- computeOverTime(timeIn, timeOut)
-    if (timeIn > 2100){
-        # nightshift
-        if (workDayType == "Regular"){
-            if (overTime > 0){
-                
-            }
-            else{
-              return totalSalary
-            }
-        }
-      else if (workDayType == "Special"){
+salaryCompute <- function(over, shift, dayType){
+   totalSalary <- dailySalary
+   if (shift == "Day Shift"){
+      if(over > 0){
 
       }
-      else{
-          return totalSalary
-      }
-    }
-    else{
-        # dayshift
-        if (workDayType == "Regular"){
-            if (overTime > 0){
-                
-            }
-            else{
-              return totalSalary
-            }
-        }
-      else if (workDayType == "Special"){
+   }
+   else{
+      if(over > 0){
 
       }
-      else{
-          return totalSalary
-      }
-    }
-    
-  }
+   }
+   return totalSalary
+}
   running = TRUE
   while(running){
     print("Weekly Payroll System")
@@ -103,10 +87,7 @@ salaryCompute <- function(timeIn, timeOut, dayOfWeek, workDayType){
         }
       else{ #if not saturday or sunday, will get if work day is regular, special, or rest
         workDayType <- readLine("Type of Day: ")
-        }
 
-#computes employees salary
-      salary <- salaryCompute(timeIn, timeOut, dayOfWeek, workDayType)
 
 #time in military to civilian format
       timeInHour <- militaryToCivilianTimeHour(timeIn)
@@ -119,8 +100,10 @@ print("Time In:          " + timeInHour +" : " + timeInMin\n)
 print("Time Out:         " + timeOutHour +" : " + timeOutMin\n)
 print("Day:              " + dayOfWeek)
 print("Work Day Type:    " + workDayType)
+workShift <- shift(timeIn)
 print("Work Shift:       " + workShift)
 print("Daily Salary:     " + dailySalary)
+salary <- salaryCompute(overTime, workShift, workDayType)
 print("Total Salary:     " + salary)
 
     }else{ #stops application
