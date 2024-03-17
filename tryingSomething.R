@@ -40,7 +40,8 @@ militaryToCivilianTimeHour <- function(time){
 computeOverTime <- function(timeOut, shift){
     if (shift == "Day Shift"){
         if (timeOut < 2100){
-
+           timeBeforeMid <- 2400 - 2100
+           over 
         }
     }
 }
