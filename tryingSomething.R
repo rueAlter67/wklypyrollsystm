@@ -109,12 +109,15 @@ salaryCompute <- function(timeIn, timeOut, dayOfWeek, workDayType){
 #time in military to civilian format
       timeInHour <- militaryToCivilianTimeHour(timeIn)
       timeInMin <- militaryToCivilianTimeMinutes(timeIn)
-print("Time In:    " + timeInHour +" : " + timeInMin\n)
+print("Time In:          " + timeInHour +" : " + timeInMin\n)
 
 #time out military to civilian format
       timeOutHour <- militaryToCivilianTimeHOur(timeOut)
       timeOutMin <- militaryToCivilianTimeMinutes(timeOut)
-print("Time Out:   " + timeOutHour +" : " + timeOutMin\n)
+print("Time Out:         " + timeOutHour +" : " + timeOutMin\n)
+print("Day:              " + dayOfWeek)
+print("Work Day Type:    " + workDayType)
+print("Work Shift:       " + workShift)
 
     }else{ #stops application
       running <- FALSE
