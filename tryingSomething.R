@@ -60,11 +60,29 @@ salaryCompute <- function(over, shift, dayType){
    if (shift == "Day Shift"){
       if(over > 0){
 
+        if(dayType == "Regular"){
+
+        }
+        else if(dayType == "Special"){
+
+        }
+        else{
+
+        }
       }
    }
    else{
       if(over > 0){
 
+        if(dayType == "Regular"){
+  
+        }
+        else if(dayType == "Special"){
+
+        }
+        else{
+
+        }
       }
    }
    return totalSalary
