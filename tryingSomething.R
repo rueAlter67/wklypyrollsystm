@@ -1,4 +1,4 @@
-9
+29
 
 library(dplyr)
 library(stringr)
@@ -6,6 +6,8 @@ library(tidyverse)
 library(lubridate)
   
 special_dates <- read_csv('dates.csv')
+
+dailySalary <- 500
 
 #converts time to civilian format and gives back minutes
 militaryToCivilianTimeMinutes <- function(time)
@@ -39,7 +41,6 @@ computeOverTime <- function(timeIn, timeOut){
 
 #computes for the salary depending on inputs
 salaryCompute <- function(timeIn, timeOut, dayOfWeek, workDayType){
-    dailySalary <- 500
     overTime <- computeOverTime(timeIn, timeOut)
     if (timeIn > 2100){
         # nightshift
@@ -118,6 +119,7 @@ print("Time Out:         " + timeOutHour +" : " + timeOutMin\n)
 print("Day:              " + dayOfWeek)
 print("Work Day Type:    " + workDayType)
 print("Work Shift:       " + workShift)
+print("Daily Salary:     " + dailySalary)
 
     }else{ #stops application
       running <- FALSE
