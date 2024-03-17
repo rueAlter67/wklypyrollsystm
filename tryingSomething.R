@@ -121,6 +121,7 @@ print("Day:              " + dayOfWeek)
 print("Work Day Type:    " + workDayType)
 print("Work Shift:       " + workShift)
 print("Daily Salary:     " + dailySalary)
+print("Total Salary:     " + salary)
 
     }else{ #stops application
       running <- FALSE
