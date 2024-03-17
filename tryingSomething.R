@@ -37,16 +37,13 @@ militaryToCivilianTimeHour <- function(time){
 
 
 #computes how many hours and returns overtime number of hours
-computeOverTime <- function(timeIn, timeOut){
-    if (timeIn < timeOut){ #nightshift
-        
+computeOverTime <- function(timeOut, shift){
+    if (shift == "Day Shift"){
+        if (timeOut < 2100){
+
+        }
     }
-    else{ #dayshift
-      if (timeOut > 2100){
-          return (timeOut - 2100)
-      }
-    }
-  }
+}
 
 #computes for the salary depending on inputs
 salaryCompute <- function(over, shift, dayType){
@@ -103,6 +100,7 @@ print("Work Day Type:    " + workDayType)
 workShift <- shift(timeIn)
 print("Work Shift:       " + workShift)
 print("Daily Salary:     " + dailySalary)
+overTime <- computeOverTime(timeOut, workShift)
 salary <- salaryCompute(overTime, workShift, workDayType)
 print("Total Salary:     " + salary)
 
