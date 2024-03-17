@@ -1,16 +1,15 @@
-
 library(dplyr)
 library(stringr)
 library(tidyverse)
 library(lubridate)
-  
-special_dates <- read_csv('dates.csv')
+
+#global variables
 
 dailySalary <- 500
 
 #checks shift
 shift <- function(time){
-    if (time > 2100){
+    if (time > 2100){ #if time is beyond 9pm
        return "Night Shift"
     }
     else{
@@ -39,7 +38,7 @@ militaryToCivilianTimeHour <- function(time){
 #computes how many hours and returns overtime number of hours
 computeOverTime <- function(timeOut, shift){
     if (shift == "Day Shift"){
-        if (timeOut < 2100){
+        if (timeOut < 2100){ #if time out is less than 9pm
            timeBeforeMid <- 2400 - 2100
            over <- (timeBeforeMid + timeOut)/100
         }
@@ -60,13 +59,13 @@ salaryCompute <- function(over, shift, dayType){
    if (shift == "Day Shift"){
       if(over > 0){
 
-        if(dayType == "Regular"){
+        if(dayType == "Regular"){ #Regular WorkDay
 
         }
-        else if(dayType == "Special"){
+        else if(dayType == "Special"){ #Special WorkDay
 
         }
-        else{
+        else{ #Rest Day
 
         }
       }
@@ -87,7 +86,7 @@ salaryCompute <- function(over, shift, dayType){
    }
    return totalSalary
 }
-  running = TRUE
+  running <- TRUE
   while(running){
     print("Weekly Payroll System")
     print("[1] Calculate weekly salary")
@@ -124,10 +123,13 @@ print("Time In:          " + timeInHour +" : " + timeInMin\n)
 print("Time Out:         " + timeOutHour +" : " + timeOutMin\n)
 print("Day:              " + dayOfWeek)
 print("Work Day Type:    " + workDayType)
+#finds id day shift or night shift
 workShift <- shift(timeIn)
 print("Work Shift:       " + workShift)
 print("Daily Salary:     " + dailySalary)
+#checks overtime
 overTime <- computeOverTime(timeOut, workShift)
+#computes salary
 salary <- salaryCompute(overTime, workShift, workDayType)
 print("Total Salary:     " + salary)
 
