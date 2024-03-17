@@ -41,6 +41,7 @@ computeOverTime <- function(timeIn, timeOut){
 
 #computes for the salary depending on inputs
 salaryCompute <- function(timeIn, timeOut, dayOfWeek, workDayType){
+    totalSalary <- dailySalary
     overTime <- computeOverTime(timeIn, timeOut)
     if (timeIn > 2100){
         # nightshift
@@ -49,14 +50,14 @@ salaryCompute <- function(timeIn, timeOut, dayOfWeek, workDayType){
                 
             }
             else{
-              return dailySalary
+              return totalSalary
             }
         }
       else if (workDayType == "Special"){
 
       }
       else{
-          return dailySalary
+          return totalSalary
       }
     }
     else{
@@ -66,14 +67,14 @@ salaryCompute <- function(timeIn, timeOut, dayOfWeek, workDayType){
                 
             }
             else{
-              return dailySalary
+              return totalSalary
             }
         }
       else if (workDayType == "Special"){
 
       }
       else{
-          return dailySalary
+          return totalSalary
       }
     }
     
