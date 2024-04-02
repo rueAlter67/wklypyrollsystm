@@ -1,12 +1,12 @@
 
 #global variables
+library(tidyverse)
 
 dailySalary <- 500
 
-overTimeAndShift <- function(time, shift, overtime, night){
-    if (shift == "Day Shift"){
-
-
+overTimeAndShift <- function(time, workshift, overtime, night){
+  
+    if (workshift == "Day Shift"){
       cat("\nHours Overtime (Night Shift Overtime):   ", overtime, "(",night,")")
     }else{
       cat("\nHours on Night Shift:                    ", night)
@@ -15,13 +15,14 @@ overTimeAndShift <- function(time, shift, overtime, night){
 
 #checks shift
 shift <- function(time){
-    if (time >= 0900 && time < 1800){ #if time in is in between 9am to 6pm
-      shift = "Day Shift"
+    if (time >= 700 && time < 1800){ #if time in is in between 9am to 6pm
+      typeShift <- "Day Shift"
+      return(typeShift)
     }
     else if(time >= 2200 || time <= 0600){ #if time in is between 10pm and 6am
-       shift = "Night Shift"
+      typeShift = "Night Shift"
+      return(typeShift)
     }
-    return(shift)
 }
 
 nightShiftHours <- function(timeOut){
@@ -94,15 +95,16 @@ salaryCompute <- function(over, night, dayType){
     if(choice == 1){
 
 #gets employees time in
-      timeIn <- as.numeric(readline("Time In (input in military time [ie. 1000 for 10am, 2300, for 11pm, 1430 for 2:30pm]): "))
+      timeIn <- as.numeric(readline("Time In (input in military time (ie. 1000 for 10am, 2300, for 11pm, 1430 for 2:30pm): "))
+      print(timeIn)
 
 #gets employees time out
-      timeOut <- as.numeric(readline("Time Out (input in military time [ie. 1000 for 10am, 2300, for 11pm, 1430 for 2:30pm]): "))
-
+      timeOut <- as.numeric(readline("Time Out (input in military time (ie. 1000 for 10am, 2300, for 11pm, 1430 for 2:30pm): "))
+      
 #gets what day employee came in for work (ie.monday, tuesday, wednesday,...)
       dayOfWeek <- readline("Day: ")
 
-#gets day type
+#gets day type *NEEDS DEBUGGING FOR INPUT VALIDATION
       if (dayOfWeek == "Saturday" || dayOfWeek == "Sunday"){
         print("- Rest Day")
         print("- Special Non-Working Day and Rest Day")
@@ -124,8 +126,8 @@ cat("\nIn time:          ", timeIn)
 cat("\nOut time:         ", timeOut)
 cat("\nDay Type:         ", workDayType)
 workShift <- shift(timeIn)
-overTime <- computeOverTime(time)
-night <- nightShiftHours(time)
+overTime <- computeOverTime(timeOut)
+night <- nightShiftHours(timeOut)
 overTimeAndShift(timeOut, workShift, overTime, night)
 #computes salary
 salary <- salaryCompute(overTime, night, workDayType)
