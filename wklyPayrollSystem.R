@@ -1,6 +1,5 @@
 
 #global variables
-library(tidyverse)
 
 dailySalary <- 500
 
