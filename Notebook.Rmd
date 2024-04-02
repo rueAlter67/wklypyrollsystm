@@ -4,8 +4,8 @@ output: html_notebook
 -----
 source("employee.R", local = knitr :: knit_global())
 source("functions.R", local = knitr :: knit_global())
+
 ```{r message = FALSE}
-----
 dailySalary <- 500
 listOfEmployees <- list()
 computeSalary <- function(){
@@ -20,3 +20,4 @@ main <- function(){
 
 main()
 
+```
