@@ -51,6 +51,42 @@ computeOverTime <- function(timeOut){
     return(over)
 }
 
+#gets the day
+getDay <- function(){
+  invalid<- FALSE
+  while(!invalid){
+    day <- readline("Day: ")
+    
+    if(day == "Sunday" | day == "Saturday" | day == "Friday" | day  == "Thursday" | day == "Wednesday" | day == "Tuesday" | day == "Monday"){
+      invalid <- TRUE
+      return(day)
+    }else{
+      print("Error: Invalid day input")
+    }
+  }
+}
+
+#gets Time
+getTime <- function(gate){
+  invalid<- FALSE
+  while(!invalid){
+    if(gate==1){
+      time <- as.numeric(readline("Time In: "))
+    }else{
+      time <- as.numeric(readline("Time Out: "))
+    }
+    
+    if( time <= 2400 & time >= 100){
+      invalid <- TRUE
+      print(time)
+      return(as.numeric(time))
+    }else{
+      print("Error: Invalid time input")
+      print(time)
+    }
+  }
+}
+
 #computes for the salary depending on inputs
 salaryCompute <- function(over, night, dayType){
    totalSalary <- dailySalary
@@ -94,15 +130,12 @@ salaryCompute <- function(over, night, dayType){
     if(choice == 1){
 
 #gets employees time in
-      timeIn <- as.numeric(readline("Time In (input in military time (ie. 1000 for 10am, 2300, for 11pm, 1430 for 2:30pm): "))
-      print(timeIn)
-
+      print("input in military time (ie. 1000 for 10am, 2300, for 11pm, 1430 for 2:30pm")
+      timeIn <- getTime(1)
 #gets employees time out
-      timeOut <- as.numeric(readline("Time Out (input in military time (ie. 1000 for 10am, 2300, for 11pm, 1430 for 2:30pm): "))
-      
+      timeOut <- getTime(2)      
 #gets what day employee came in for work (ie.monday, tuesday, wednesday,...)
-      dayOfWeek <- readline("Day: ")
-
+      dayOfWeek <- getDay()
 #gets day type *NEEDS DEBUGGING FOR INPUT VALIDATION
       if (dayOfWeek == "Saturday" || dayOfWeek == "Sunday"){
         print("- Rest Day")
