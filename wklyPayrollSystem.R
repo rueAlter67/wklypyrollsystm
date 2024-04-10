@@ -1,3 +1,8 @@
+#********************
+#Last names: Villamor, Laroza, Cacatian, Baterina
+#Language: R
+#Paradigm(s): Object Oriented
+#********************
 
 #global variables
 
